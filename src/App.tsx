@@ -3,12 +3,12 @@ import './App.css';
 import { query } from './queries/postCollection';
 
 const fetchCollection = {
-  spaceID: `${process.env.CONTENTFUL_SPACE_ID}`,
-  accessToken: `${process.env.CONTENTFUL_ID_TOKEN}`,
-  endpoint: `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+  spaceID: process.env.REACT_APP_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.REACT_APP_CONTENTFUL_ID_TOKEN,
+  endpoint: `https://graphql.contentful.com/content/v1/spaces/${process.env.REACT_APP_CONTENTFUL_SPACE_ID}`,
   method: "POST",
   headers: {
-    Authorization: `Bearer ${process.env.CONTENTFUL_ID_TOKEN}`,
+    Authorization: `Bearer ${process.env.REACT_APP_CONTENTFUL_ID_TOKEN}`,
     "Content-Type": "application/json",
   },
   body: JSON.stringify({ query })
