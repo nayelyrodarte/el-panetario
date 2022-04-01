@@ -3,12 +3,12 @@ import './App.css';
 import { query } from './queries/postCollection';
 
 const fetchCollection = {
-  spaceID: "ficjrs60ipbi",
-  accessToken: "BM2WA7ebVSMAcVrVs76Num04j30OwcYvRYV6Yz92V-o",
-  endpoint: "https://graphql.contentful.com/content/v1/spaces/ficjrs60ipbi",
+  spaceID: `${process.env.CONTENTFUL_SPACE_ID}`,
+  accessToken: `${process.env.CONTENTFUL_ID_TOKEN}`,
+  endpoint: `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
   method: "POST",
   headers: {
-    Authorization: "Bearer BM2WA7ebVSMAcVrVs76Num04j30OwcYvRYV6Yz92V-o",
+    Authorization: `Bearer ${process.env.CONTENTFUL_ID_TOKEN}`,
     "Content-Type": "application/json",
   },
   body: JSON.stringify({ query })
