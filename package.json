@@ -9,10 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@keystatic/core": "^0.3.6",
+    "@keystatic/next": "^3.0.0",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "stable": "^0.1.8"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
