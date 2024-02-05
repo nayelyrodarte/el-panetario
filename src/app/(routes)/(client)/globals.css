@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Laviossa';
-  src: url('../../../_assets/Laviossa-Medium.otf');
+  src: url('../../../_assets/fonts/Laviossa-Medium.otf');
 }
 
 @font-face {
   font-family: 'General Sans';
-  src: url('../../../_assets/GeneralSans-Medium.otf');
+  src: url('../../../_assets/fonts/GeneralSans-Medium.otf');
 }
 
 *,
@@ -20,9 +20,11 @@
 
 body {
   font-family: var(--secondary-font);
-  color: var(--main-text-color);
+  font-size: 1.15rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+
+  color: var(--main-text-color);
 }
 
 img,
@@ -67,9 +69,19 @@ h3 {
   --secondary-font: 'General Sans';
   --main-text-color: #40350b;
 
-  --primary-color: #0063d8;
-  --secondary-color: #ffcd00;
-  --neutral-color: #fae9d8;
+  --primary-color: rgba(0, 99, 216, 1);
+  --secondary-color: rgba(255, 205, 0, 1);
+  --neutral-color: rgba(250, 233, 216, 1);
 
-  --background-color: #fbfbfb;
+  --background-color: rgba(251, 251, 251, 1);
+
+  --spacing-unit: 8px;
+
+  --spacing-xs: var(--spacing-unit);
+  --spacing-sm: calc(2 * var(--spacing-unit));
+  --spacing-md: calc(3 * var(--spacing-unit));
+  --spacing-lg: calc(4 * var(--spacing-unit));
+
+  --padding: var(--spacing-md);
+  --margin: var(--spacing-sm);
 }
