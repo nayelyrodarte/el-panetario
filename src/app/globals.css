@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Laviossa';
-  src: url('../assets/Laviossa-Medium.otf');
+  src: url('../_assets/Laviossa-Medium.otf');
 }
 
 @font-face {
   font-family: 'General Sans';
-  src: url('../assets/GeneralSans-Medium.otf');
+  src: url('../_assets/GeneralSans-Medium.otf');
 }
 
 :root {
