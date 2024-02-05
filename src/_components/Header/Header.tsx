@@ -1,11 +1,12 @@
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 import Croissant from './../../_assets/svg/croissant_beige.svg';
 
 export default function Header() {
   return (
     <nav className={styles.header}>
-      <section className={styles.header__intro}>
+      <section>
         <Image
           width={40}
           height={40}
@@ -15,7 +16,7 @@ export default function Header() {
         <p>El Panetario</p>
       </section>
       <section>
-        <ul className={styles.header__links}>
+        <ul>
           <li>Inicio</li>
           <li>Recetas</li>
         </ul>
