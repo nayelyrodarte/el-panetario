@@ -1,3 +1,29 @@
 .header {
   background-color: var(--primary-color);
+  color: var(--neutral-color);
+
+  padding: var(--padding);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & .header__intro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+
+    font-family: var(--primary-font);
+  }
+
+  & .header__links {
+    display: flex;
+    flex-direction: row;
+    gap: 0.85rem;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 }
