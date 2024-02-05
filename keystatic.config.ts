@@ -25,5 +25,21 @@ export default config({
         }),
       },
     }),
+    recipes: collection({
+      label: 'Recipes',
+      slugField: 'title',
+      path: 'src/content/recipes/*',
+      format: { contentField: 'content' },
+      schema: {
+        title: fields.slug({ name: { label: 'Title' } }),
+        content: fields.document({
+          label: 'Content',
+          formatting: true,
+          dividers: true,
+          links: true,
+          images: true,
+        }),
+      },
+    }),
   },
 });
