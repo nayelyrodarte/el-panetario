@@ -1,9 +1,13 @@
+'use client';
+
 import styles from './Header.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Croissant from './../../_assets/svg/croissant_beige.svg';
 
 export default function Header() {
+  const path = usePathname();
   return (
     <nav className={styles.header}>
       <section>
@@ -17,8 +21,20 @@ export default function Header() {
       </section>
       <section>
         <ul>
-          <li>Inicio</li>
-          <li>Recetas</li>
+          <li
+            style={{
+              textDecoration: `${path === '/' ? 'underline' : 'none'}`,
+            }}
+          >
+            <Link href="/">Inicio</Link>
+          </li>
+          <li
+            style={{
+              textDecoration: `${path === '/recipes' ? 'underline' : 'none'}`,
+            }}
+          >
+            <Link href="/recipes">Recetas</Link>
+          </li>
         </ul>
       </section>
     </nav>
