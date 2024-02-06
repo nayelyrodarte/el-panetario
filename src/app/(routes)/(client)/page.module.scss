@@ -1,0 +1,26 @@
+.main {
+  height: 90dvh;
+
+  section {
+    background-color: var(--primary-color);
+
+    padding: var(--padding);
+
+    display: flex;
+    flex-direction: column;
+
+    h1,
+    h2 {
+      color: var(--neutral-color);
+
+      margin: auto;
+
+      z-index: 2;
+    }
+  }
+
+  .wave {
+    position: relative;
+    top: -5rem;
+  }
+}
