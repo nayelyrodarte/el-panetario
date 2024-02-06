@@ -1,6 +1,9 @@
-import type { Metadata } from 'next';
 import './globals.css';
-import Header from '../../../_components/Header/Header';
+
+import type { Metadata } from 'next';
+
+import Footer from '@/_components/Footer/Footer';
+import Header from '@/_components/Header/Header';
 
 export const metadata: Metadata = {
   title: 'El Panetario',
@@ -17,6 +20,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

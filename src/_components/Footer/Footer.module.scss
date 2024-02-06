@@ -1,0 +1,13 @@
+.footer {
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
+
+  width: 100%;
+  min-height: 5rem;
+
+  padding: var(--padding);
+
+  section {
+    max-width: var(--max-width);
+  }
+}
