@@ -20,7 +20,6 @@
 
 body {
   font-family: var(--secondary-font);
-  font-size: 1.15rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 
@@ -54,6 +53,19 @@ h1,
 h2,
 h3 {
   font-family: var(--primary-font);
+  font-weight: normal;
+}
+
+h1 {
+  font-size: var(--font-heading-1);
+}
+
+h2 {
+  font-size: --var(--font-heading-2);
+}
+
+h3 {
+  font-size: --var(--font-heading-3);
 }
 
 #root,
@@ -62,21 +74,23 @@ h3 {
 }
 
 :root {
-  --max-width: 1100px;
-  --border-radius: 8px;
-
-  --primary-font: 'Laviossa';
-  --secondary-font: 'General Sans';
-  --main-text-color: #40350b;
-
   --primary-color: rgba(0, 99, 216, 1);
   --secondary-color: rgba(255, 205, 0, 1);
   --neutral-color: rgba(250, 233, 216, 1);
 
   --background-color: rgba(251, 251, 251, 1);
 
-  --spacing-unit: 8px;
+  --primary-font: 'Laviossa';
+  --secondary-font: 'General Sans';
+  --main-text-color: hsla(48, 71%, 15%, 1);
 
+  --font-heading-1: 48px;
+  --font-heading-2: 34px;
+  --font-heading-3: 24px;
+  --font-body: 16px;
+  --font-caption: 12px;
+
+  --spacing-unit: 8px;
   --spacing-xs: var(--spacing-unit);
   --spacing-sm: calc(2 * var(--spacing-unit));
   --spacing-md: calc(3 * var(--spacing-unit));
@@ -84,4 +98,7 @@ h3 {
 
   --padding: var(--spacing-md);
   --margin: var(--spacing-sm);
+  --max-width: 1500px;
+
+  --border-radius: 8px;
 }

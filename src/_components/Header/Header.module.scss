@@ -3,10 +3,17 @@
   color: var(--neutral-color);
 
   padding: var(--padding);
+  width: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  div {
+    max-width: var(--max-width);
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
   section {
     display: flex;
@@ -15,22 +22,22 @@
     gap: 1rem;
 
     font-family: var(--primary-font);
+  }
 
-    ul {
-      font-family: var(--secondary-font);
+  ul {
+    font-family: var(--secondary-font);
 
-      display: flex;
-      flex-direction: row;
-      gap: 0.85rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   }
 }
