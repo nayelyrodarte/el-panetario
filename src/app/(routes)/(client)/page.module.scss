@@ -4,8 +4,6 @@
   section {
     background-color: var(--primary-color);
 
-    padding: var(--padding);
-
     display: flex;
     flex-direction: column;
 
@@ -21,6 +19,6 @@
 
   .wave {
     position: relative;
-    top: -5rem;
+    height: auto;
   }
 }
