@@ -57,15 +57,27 @@ h3 {
 }
 
 h1 {
-  font-size: var(--font-heading-1);
+  font-size: var(--font-heading-1-mb);
+
+  @media only screen and (min-width: 40em) {
+    font-size: var(--font-heading-1);
+  }
 }
 
 h2 {
-  font-size: --var(--font-heading-2);
+  font-size: var(--font-heading-2-mb);
+
+  @media only screen and (min-width: 40em) {
+    font-size: var(--font-heading-2);
+  }
 }
 
 h3 {
-  font-size: --var(--font-heading-3);
+  font-size: var(--font-heading-3-mb);
+
+  @media only screen and (min-width: 40em) {
+    font-size: var(--font-heading-3);
+  }
 }
 
 #root,
@@ -87,6 +99,12 @@ h3 {
   --font-heading-1: 48px;
   --font-heading-2: 34px;
   --font-heading-3: 24px;
+
+  /* Mobile headings */
+  --font-heading-1-mb: 30px;
+  --font-heading-2-mb: 24px;
+  --font-heading-3-mb: 20px;
+
   --font-body: 16px;
   --font-caption: 12px;
 
