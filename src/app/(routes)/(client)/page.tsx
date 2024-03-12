@@ -1,17 +1,47 @@
+'use client';
+
 import Image from 'next/image';
+import styled from 'styled-components';
 
 import Wave from '@/_assets/svg/wave.svg';
 
 import styles from './page.module.scss';
 
+const Wrapper = styled.main`
+  height: 90dvh;
+`;
+
+const Header = styled.section`
+  background-color: var(--primary-color);
+
+  display: flex;
+  flex-direction: column;
+
+  h1,
+  h2,
+  h3 {
+    color: var(--neutral-color);
+
+    margin: auto;
+
+    z-index: 2;
+  }
+`;
+
+const StyledWave = styled(Image)`
+  position: relative;
+  width: 100%;
+  height: auto;
+`;
+
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <section>
+    <Wrapper>
+      <Header>
         <h1>El Panetario</h1>
         <h3>Un Universo de Pan</h3>
-      </section>
-      <Image className={styles.wave} src={Wave} alt="" />
-    </main>
+      </Header>
+      <StyledWave src={Wave} alt="" />
+    </Wrapper>
   );
 }
