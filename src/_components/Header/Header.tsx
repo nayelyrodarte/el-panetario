@@ -10,53 +10,59 @@ import Croissant from './../../_assets/svg/croissant_beige.svg';
 const StyledHeader = styled.nav`
   background-color: var(--primary-color);
   color: var(--neutral-color);
+`;
 
-  padding: var(--padding);
-  width: 100%;
+const NavInner = styled.div`
+  max-width: var(--max-width);
 
-  div {
-    max-width: var(--max-width);
+  margin: auto;
 
-    margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+const NavSection = styled.section`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 
-  section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
+  font-family: var(--primary-font);
+`;
 
-    font-family: var(--primary-font);
-  }
+const NavList = styled.ul`
+  font-family: var(--secondary-font);
 
-  ul {
-    font-family: var(--secondary-font);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+  a {
+    text-decoration: none;
+    color: inherit;
   }
 `;
 
+const NavElement = styled.li<{ $isSelected: boolean }>`
+  text-decoration: ${(props) => (props.$isSelected ? 'underline' : 'none')};
+`;
+
+const isLinkActive = (currentPath: string, givenPath: string) => {
+  return currentPath === givenPath;
+};
+
 export default function Header() {
   const path = usePathname();
+
   return (
     <StyledHeader>
-      <div className="header__inner">
-        <section>
+      <NavInner>
+        <NavSection>
           <Image
             width={40}
             height={40}
@@ -64,26 +70,18 @@ export default function Header() {
             alt="Icono de croissant"
           />
           <h3>El Panetario</h3>
-        </section>
-        <section>
-          <ul>
-            <li
-              style={{
-                textDecoration: `${path === '/' ? 'underline' : 'none'}`,
-              }}
-            >
+        </NavSection>
+        <NavSection>
+          <NavList>
+            <NavElement $isSelected={isLinkActive(path, '/')}>
               <Link href="/">Inicio</Link>
-            </li>
-            <li
-              style={{
-                textDecoration: `${path === '/recipes' ? 'underline' : 'none'}`,
-              }}
-            >
+            </NavElement>
+            <NavElement $isSelected={isLinkActive(path, '/recipes')}>
               <Link href="/recipes">Recetas</Link>
-            </li>
-          </ul>
-        </section>
-      </div>
+            </NavElement>
+          </NavList>
+        </NavSection>
+      </NavInner>
     </StyledHeader>
   );
 }
