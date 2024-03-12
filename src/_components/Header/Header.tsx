@@ -17,6 +17,7 @@ const NavInner = styled.div<{ $isHome: boolean }>`
   height: 3.5rem;
 
   margin: auto;
+  padding: var(--padding);
 
   display: flex;
   flex-direction: row;

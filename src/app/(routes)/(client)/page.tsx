@@ -14,13 +14,16 @@ const Header = styled.section`
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
+
+  height: 10rem;
 
   h1,
   h2,
   h3 {
     color: var(--neutral-color);
 
-    margin: auto;
+    margin: 0 auto;
 
     z-index: 2;
   }
