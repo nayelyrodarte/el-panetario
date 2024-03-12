@@ -5,8 +5,6 @@ import styled from 'styled-components';
 
 import Wave from '@/_assets/svg/wave.svg';
 
-import styles from './page.module.scss';
-
 const Wrapper = styled.main`
   height: 90dvh;
 `;
