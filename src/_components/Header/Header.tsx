@@ -14,6 +14,7 @@ const StyledHeader = styled.nav`
 
 const NavInner = styled.div<{ $isHome: boolean }>`
   max-width: var(--max-width);
+  height: 3.5rem;
 
   margin: auto;
 
