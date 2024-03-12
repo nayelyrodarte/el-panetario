@@ -12,14 +12,14 @@ const StyledHeader = styled.nav`
   color: var(--neutral-color);
 `;
 
-const NavInner = styled.div`
+const NavInner = styled.div<{ $isHome: boolean }>`
   max-width: var(--max-width);
 
   margin: auto;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: ${(props) => (props.$isHome ? 'end' : 'space-between')};
 `;
 
 const NavSection = styled.section`
@@ -50,6 +50,10 @@ const NavList = styled.ul`
 
 const NavElement = styled.li<{ $isSelected: boolean }>`
   text-decoration: ${(props) => (props.$isSelected ? 'underline' : 'none')};
+
+  a {
+    font-weight: ${(props) => (props.$isSelected ? '600' : 'normal')};
+  }
 `;
 
 const isLinkActive = (currentPath: string, givenPath: string) => {
@@ -61,16 +65,18 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <NavInner>
-        <NavSection>
-          <Image
-            width={40}
-            height={40}
-            src={Croissant}
-            alt="Icono de croissant"
-          />
-          <h3>El Panetario</h3>
-        </NavSection>
+      <NavInner $isHome={path === '/'}>
+        {path !== '/' && (
+          <NavSection>
+            <Image
+              width={40}
+              height={40}
+              src={Croissant}
+              alt="Icono de croissant"
+            />
+            <h3>El Panetario</h3>
+          </NavSection>
+        )}
         <NavSection>
           <NavList>
             <NavElement $isSelected={isLinkActive(path, '/')}>
