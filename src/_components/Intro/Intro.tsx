@@ -23,9 +23,16 @@ const StyledImage = styled(Image)`
   border-radius: 1000px;
 
   object-fit: cover;
+  object-position: 0% 30%;
 
-  width: 350px;
-  height: 350px;
+  width: 90vw;
+  height: 200px;
+
+  @media only screen and (min-width: 48em) {
+    object-position: 0% 20%;
+    width: 350px;
+    height: 350px;
+  }
 `;
 
 const Title = styled.h2`
