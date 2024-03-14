@@ -4,10 +4,12 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 import Wave from '@/_assets/svg/wave.svg';
+import { FeaturedRecipe } from '@/_components/FeaturedRecipe/FeaturedRecipe';
 import { Intro } from '@/_components/Intro/Intro';
 
 const Wrapper = styled.main`
   min-height: 90dvh;
+  background-color: var(--background-color);
 `;
 
 const Header = styled.section`
@@ -37,6 +39,7 @@ export default function Home() {
       </Header>
       <StyledWave src={Wave} alt="" />
       <Intro />
+      <FeaturedRecipe />
     </Wrapper>
   );
 }

@@ -89,12 +89,14 @@ h3 {
   --primary-color: rgba(0, 99, 216, 1);
   --secondary-color: rgba(255, 205, 0, 1);
   --neutral-color: rgba(250, 233, 216, 1);
+  --accent-color: rgba(255, 128, 0);
 
   --background-color: rgba(251, 251, 251, 1);
 
   --primary-font: 'Laviossa';
   --secondary-font: 'General Sans';
   --main-text-color: hsla(48, 71%, 15%, 1);
+  --white-text-color: rgba(251, 251, 251, 1);
 
   --font-heading-1: 48px;
   --font-heading-2: 34px;
