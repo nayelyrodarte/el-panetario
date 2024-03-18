@@ -37,7 +37,7 @@ export default function Home() {
         <h1>El Panetario</h1>
         <h3>Un Universo de Pan</h3>
       </Header>
-      <StyledWave src={Wave} alt="" />
+      <Wave />
       <Intro />
       <FeaturedRecipe />
     </Wrapper>

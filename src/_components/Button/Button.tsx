@@ -1,17 +1,54 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export function Button({ text, onClick }: { text: string; onClick: Function }) {
-  const Button = styled.button`
-    background-color: var(--secondary-color);
-    color: var(--main-text-color);
-    font-weight: 600;
+import ArrowRight from '@/_assets/svg/arrow-right.svg';
 
-    border-radius: 100px;
-    border: none;
+type IconName = 'arrow-right';
 
-    padding: var(--spacing-sm) var(--spacing-md);
-  `;
+const setIcon = (icon: IconName) => {
+  const iconWidth = '1.5rem';
 
-  return <Button onClick={() => onClick}>{text}</Button>;
+  switch (icon) {
+    case 'arrow-right':
+      return <ArrowRight width={iconWidth} />;
+    default:
+      return null;
+  }
+};
+
+const StyledButton = styled.button`
+  background-color: var(--secondary-color);
+  color: var(--main-text-color);
+  font-weight: 600;
+  border-radius: 100px;
+  border: none;
+
+  display: flex;
+  gap: 0.5rem;
+
+  cursor: pointer;
+
+  padding: var(--spacing-sm) var(--spacing-md);
+  width: fit-content;
+
+  svg {
+    fill: var(--main-text-color);
+  }
+`;
+
+export function Button({
+  text,
+  onClick,
+  iconName,
+}: {
+  text: string;
+  onClick: Function;
+  iconName?: string;
+}) {
+  return (
+    <StyledButton onClick={() => onClick}>
+      {iconName && setIcon(iconName)}
+      {text}
+    </StyledButton>
+  );
 }

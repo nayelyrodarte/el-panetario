@@ -8,6 +8,12 @@ import Wave from './../../_assets/svg/wave_yellow.svg';
 
 const Wrapper = styled.section`
   width: 100%;
+
+  > svg:first-child {
+    rotate: -180deg;
+    height: fit-content;
+    margin-bottom: -1px;
+  }
 `;
 
 const Inner = styled.div`
@@ -91,18 +97,16 @@ const RecipeInner = styled.div`
   }
 `;
 
+const RecipeText = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export function FeaturedRecipe() {
   return (
     <Wrapper>
-      <Image
-        src={Wave}
-        alt=""
-        style={{
-          rotate: '-180deg',
-          height: 'fit-content',
-          marginBottom: '-1px',
-        }}
-      />
+      <Wave />
       <Inner>
         <RecipeContainer>
           <TitleContainer>
@@ -110,27 +114,26 @@ export function FeaturedRecipe() {
           </TitleContainer>
           <RecipeInner>
             <Image src={Pay} alt={'Pay'} />
-            <Text>
-              <h3>Pay de Queso</h3>
-              <p>
-                Descripcion corta de la receta. Lorem ipsum dolor sit amet,
-                consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip e
-              </p>
-            </Text>
+            <RecipeText>
+              <Text>
+                <h3>Pay de Queso</h3>
+                <p>
+                  Descripcion corta de la receta. Lorem ipsum dolor sit amet,
+                  consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                  ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip e
+                </p>
+              </Text>
+              <Button
+                iconName="arrow-right"
+                onClick={() => {}}
+                text="Ir a la receta"
+              />
+            </RecipeText>
           </RecipeInner>
-          <Button onClick={() => {}} text="Ir a la receta" />
         </RecipeContainer>
       </Inner>
-      <Image
-        src={Wave}
-        alt=""
-        style={{
-          rotate: '360deg',
-          height: 'fit-content',
-        }}
-      />
+      <Wave />
     </Wrapper>
   );
 }
