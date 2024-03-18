@@ -33,6 +33,7 @@ const StyledWave = styled(Image)`
 export default function Home() {
   return (
     <Wrapper>
+      {/** TODO: Move headings & wave to header component */}
       <Header>
         <h1>El Panetario</h1>
         <h3>Un Universo de Pan</h3>
