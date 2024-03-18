@@ -3,6 +3,12 @@ import styled from 'styled-components';
 
 import ArrowRight from '@/_assets/svg/arrow-right.svg';
 
+interface Button {
+  text: string;
+  onClick: Function;
+  iconName?: IconName;
+}
+
 type IconName = 'arrow-right';
 
 const setIcon = (icon: IconName) => {
@@ -36,15 +42,7 @@ const StyledButton = styled.button`
   }
 `;
 
-export function Button({
-  text,
-  onClick,
-  iconName,
-}: {
-  text: string;
-  onClick: Function;
-  iconName?: string;
-}) {
+export function Button({ text, onClick, iconName }: Button) {
   return (
     <StyledButton onClick={() => onClick}>
       {iconName && setIcon(iconName)}
