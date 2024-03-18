@@ -34,7 +34,7 @@ const NavSection = styled.section`
 `;
 
 const NavList = styled.ul`
-  font-family: var(--secondary-font);
+  font-family: var(--primary-font);
 
   display: flex;
   flex-direction: row;
@@ -51,7 +51,7 @@ const NavList = styled.ul`
 `;
 
 const NavElement = styled.li<{ $isSelected: boolean }>`
-  text-decoration: ${(props) => (props.$isSelected ? 'underline' : 'none')};
+  color: ${(props) => (props.$isSelected ? 'var(--secondary-color)' : 'none')};
 
   a {
     font-weight: ${(props) => (props.$isSelected ? '600' : 'normal')};
