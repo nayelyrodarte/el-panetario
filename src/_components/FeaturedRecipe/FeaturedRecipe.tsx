@@ -16,7 +16,11 @@ const Inner = styled.div`
   align-content: center;
   justify-content: center;
 
-  padding: var(--spacing-md);
+  padding: calc(var(--spacing-lg) * 2) var(--spacing-lg);
+
+  @media only screen and (min-width: 48em) {
+    padding: var(--spacing-lg);
+  }
 `;
 
 const RecipeContainer = styled.div`
@@ -41,7 +45,7 @@ const TitleContainer = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  top: -2rem;
+  top: -2.5rem;
   rotate: 0deg;
 
   margin: auto;
