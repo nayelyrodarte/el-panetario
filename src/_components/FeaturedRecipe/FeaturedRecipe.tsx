@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
+import { Button } from '../Button/Button';
 import Pay from './../../_assets/img/Pay.jpeg';
 import Wave from './../../_assets/svg/wave_yellow.svg';
 
@@ -119,6 +120,7 @@ export function FeaturedRecipe() {
               </p>
             </Text>
           </RecipeInner>
+          <Button onClick={() => {}} text="Ir a la receta" />
         </RecipeContainer>
       </Inner>
       <Image
