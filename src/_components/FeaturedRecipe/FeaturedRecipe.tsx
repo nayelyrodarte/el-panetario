@@ -42,16 +42,22 @@ const TitleContainer = styled.div`
   left: 0;
   right: 0;
   top: -2rem;
-  rotate: -2.5deg;
+  rotate: 0deg;
 
   margin: auto;
   padding: var(--spacing-xs) calc(var(--spacing-lg) * 2);
+  white-space: nowrap;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 
   width: fit-content;
+
+  @media only screen and (min-width: 40em) {
+    rotate: -2.5deg;
+  }
 `;
 
 const Text = styled.article`
-  max-width: 50ch;
+  max-width: 45ch;
 
   display: flex;
   flex-direction: column;
