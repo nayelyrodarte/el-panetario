@@ -21,7 +21,7 @@ const NavInner = styled.div<{ $isHome: boolean }>`
 
   display: flex;
   flex-direction: row;
-  justify-content: ${(props) => (props.$isHome ? 'end' : 'space-between')};
+  justify-content: ${(props) => (props.$isHome ? 'flex-end' : 'space-between')};
 `;
 
 const NavSection = styled.section`

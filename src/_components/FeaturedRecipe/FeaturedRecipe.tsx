@@ -11,7 +11,6 @@ const Wrapper = styled.section`
 
   > svg:first-child {
     rotate: -180deg;
-    height: fit-content;
     margin-bottom: -1px;
   }
 `;
@@ -52,18 +51,23 @@ const TitleContainer = styled.div`
   position: absolute;
   left: 0;
   right: 0;
-  top: -2.5rem;
-  rotate: 0deg;
+  top: -0.25rem;
+  rotate: -5deg;
+
+  display: flex;
+  justify-content: center;
 
   margin: auto;
-  padding: var(--spacing-xs) calc(var(--spacing-lg) * 2);
-  white-space: nowrap;
+  padding: var(--spacing-sm);
+
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 
-  width: fit-content;
-
   @media only screen and (min-width: 40em) {
+    padding: var(--spacing-xs) calc(var(--spacing-lg) * 2);
     rotate: -2.5deg;
+    width: fit-content;
+    top: -2.5rem;
+    white-space: nowrap;
   }
 `;
 
@@ -83,11 +87,13 @@ const RecipeInner = styled.div`
   img {
     width: 100%;
     height: 260px;
+    margin-top: 2rem;
 
     object-fit: cover;
     border-radius: var(--border-radius);
 
     @media only screen and (min-width: 48em) {
+      margin-top: 0;
       width: 340px;
     }
   }
