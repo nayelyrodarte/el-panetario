@@ -1,13 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 
 import CroissantBeige from '@/_assets/svg/croissant_beige.svg';
-
-import Croissant from './../../_assets/svg/croissant_beige.svg';
 
 const StyledNav = styled.nav`
   background-color: var(--primary-color);
