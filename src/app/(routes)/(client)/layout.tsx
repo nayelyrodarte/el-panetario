@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 import Footer from '@/_components/Footer/Footer';
-import Header from '@/_components/Header/Header';
+import Navigation from '@/_components/Header/Navigation';
 
 import StyledComponentsRegistry from './registry';
 
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body>
         <StyledComponentsRegistry>
-          <Header />
+          <Navigation />
           {children}
           <Footer />
         </StyledComponentsRegistry>

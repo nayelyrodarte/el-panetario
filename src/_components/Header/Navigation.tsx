@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import Croissant from './../../_assets/svg/croissant_beige.svg';
 
-const StyledHeader = styled.nav`
+const StyledNav = styled.nav`
   background-color: var(--primary-color);
   color: var(--neutral-color);
 `;
@@ -62,11 +62,11 @@ const isLinkActive = (currentPath: string, givenPath: string) => {
   return currentPath === givenPath;
 };
 
-export default function Header() {
+export default function Navigation() {
   const path = usePathname();
 
   return (
-    <StyledHeader>
+    <StyledNav>
       <NavInner $isHome={path === '/'}>
         {path !== '/' && (
           <NavSection>
@@ -90,6 +90,6 @@ export default function Header() {
           </NavList>
         </NavSection>
       </NavInner>
-    </StyledHeader>
+    </StyledNav>
   );
 }
