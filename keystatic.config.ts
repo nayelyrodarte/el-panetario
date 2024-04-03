@@ -1,4 +1,4 @@
-import { config, fields, collection } from '@keystatic/core';
+import { collection, config, fields } from '@keystatic/core';
 
 export default config({
   storage: {
@@ -31,9 +31,31 @@ export default config({
       path: 'src/content/recipes/*',
       format: { contentField: 'content' },
       schema: {
-        title: fields.slug({ name: { label: 'Title' } }),
+        title: fields.slug({
+          name: { label: 'Title' },
+        }),
+        date: fields.date({
+          label: 'Date of creation',
+          defaultValue: 'kind',
+          validation: { isRequired: true },
+        }),
+        description: fields.text({
+          label: 'Description',
+          multiline: true,
+        }),
+        image: fields.image({
+          label: 'Image',
+          validation: { isRequired: true },
+          directory: 'src/_assets/img',
+          publicPath: '_assets/img',
+        }),
+        featured: fields.checkbox({
+          label: 'This is a featured recipe.',
+          description:
+            'Recuerda siempre quitar el check de la receta destacada anterior antes de marcar una nueva. Si el check no se elimina, se mostrará la receta destacada con fecha mas reciente.',
+        }),
         content: fields.document({
-          label: 'Content',
+          label: 'Method',
           formatting: true,
           dividers: true,
           links: true,
