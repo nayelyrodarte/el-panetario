@@ -61,7 +61,7 @@ const isLinkActive = (currentPath: string, givenPath: string) => {
   return currentPath === givenPath;
 };
 
-export default function Navigation() {
+export function Navigation() {
   const path = usePathname();
 
   return (

@@ -3,8 +3,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import React from 'react';
 
-import Footer from '@/_components/Footer/Footer';
-import Navigation from '@/_components/Navigation/Navigation';
+import { Footer } from '@/_components/Footer';
+import { Navigation } from '@/_components/Navigation';
 
 import StyledComponentsRegistry from './registry';
 

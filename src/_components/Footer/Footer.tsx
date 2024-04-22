@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
   }
 `;
 
-export default function Footer() {
+export function Footer() {
   return (
     <StyledFooter>
       <section>

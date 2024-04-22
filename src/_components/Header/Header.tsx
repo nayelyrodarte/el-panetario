@@ -15,7 +15,7 @@ const StyledHeader = styled.header`
   height: 10rem;
 `;
 
-export default function Header() {
+export function Header() {
   return (
     <>
       <StyledHeader>
