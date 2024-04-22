@@ -2,9 +2,9 @@ import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
-import { Button } from '../Button/Button';
-import Pay from './../../_assets/img/Pay.jpeg';
-import Wave from './../../_assets/svg/wave_yellow.svg';
+import Pay from '@/_assets/img/Pay.jpeg';
+import Wave from '@/_assets/svg/wave_yellow.svg';
+import { Button } from '@/_components/Button';
 
 const Wrapper = styled.section`
   width: 100%;
