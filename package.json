@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@keystatic/core": "^0.3.6",
-    "@keystatic/next": "^3.0.0",
     "@sanity/client": "^6.12.4",
     "@sanity/icons": "^2.8",
     "@sanity/image-url": "1",
