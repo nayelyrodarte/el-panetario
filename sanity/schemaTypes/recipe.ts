@@ -16,7 +16,7 @@ export default defineType({
       title: 'Slug',
       type: 'slug',
       description:
-        'The part of a URL that identifies a particular page on a website in an easy-to-read form. It gets automatically generated from the title.',
+        'The part of a URL that identifies a particular page on a website in an easy-to-read form. It gets automatically generated from the title when you click on "Generate".',
       validation: (rule) => rule.required(),
       options: {
         source: 'title',
@@ -52,6 +52,16 @@ export default defineType({
       title: 'Published at',
       type: 'datetime',
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'prepTime',
+      title: 'Preparation time',
+      type: 'string',
+    }),
+    defineField({
+      name: 'servings',
+      title: 'Servings',
+      type: 'string',
     }),
     defineField({
       name: 'ingredients',
