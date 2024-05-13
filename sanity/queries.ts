@@ -1,4 +1,4 @@
-export const allCategories = `
+export const getAllCategories = `
 *[_type == "category"]{
  title,
  _id,
@@ -6,7 +6,7 @@ export const allCategories = `
 `;
 
 export const getRecipeByCategoryId = `
-*[_type == "category" && $id == _id]{
+*[_type == "category" && $categoryId == _id]{
  title,
  'recipes': *[_type == "recipe" && references(^._id)]{ title, mainImage, slug }
 }
