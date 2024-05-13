@@ -10,5 +10,10 @@ export default defineType({
       title: 'Title',
       type: 'string',
     }),
+    defineField({
+      name: 'image',
+      title: 'Icono',
+      type: 'image',
+    }),
   ],
 });
