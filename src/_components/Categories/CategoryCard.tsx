@@ -1,9 +1,14 @@
 import Image from 'next/image';
 import styled from 'styled-components';
+interface CategoryCard {
+  category: {
+    title: string;
+    image: string;
+  };
+}
 
 const Card = styled.div``;
-
-export default function CategoryCard({ category }: any) {
+export default function CategoryCard({ category }: CategoryCard) {
   const { title, image } = category;
   return (
     <div>
