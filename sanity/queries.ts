@@ -14,9 +14,14 @@ export const getRecipeByCategoryId = `
 }
 `;
 
-export const getRecipeByCategoryName = `
-*[_type == "category" && $title == title]{
+export const getHomeData = `
+{'featured': *[_type == "category" && title == 'Featured']{
  title,
- 'recipes': *[_type == "recipe" && references(^._id)]{ title, mainImage, slug }
+ 'recipes': *[_type == "recipe" && references(^._id)]{ title, mainImage, slug }[0..3]
+},
+'categories': *[_type == "category" && title != 'Featured']{
+ title,
+ _id,
+},
 }
 `;
