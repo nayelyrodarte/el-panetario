@@ -9,7 +9,6 @@ import { client } from '../_api/client';
 
 export default async function Home() {
   const data = await client.fetch(getHomeData);
-  console.log(data);
 
   if (!data) {
     return null;

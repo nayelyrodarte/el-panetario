@@ -87,9 +87,13 @@ h3 {
 
 :root {
   --primary-color: rgba(0, 99, 216, 1);
+  --primary-color-contrast: rgba(0, 89, 195, 1);
+
   --secondary-color: rgba(255, 205, 0, 1);
+  --secondary-color-soft: rgba(249, 222, 113, 1);
+
   --neutral-color: rgba(250, 233, 216, 1);
-  --accent-color: rgba(255, 128, 0);
+  --accent-color: rgba(255, 128, 0, 1);
 
   --background-color: rgba(251, 251, 251, 1);
 

@@ -22,6 +22,7 @@ export const getHomeData = `
 'categories': *[_type == "category" && title != 'Featured']{
  title,
  _id,
+ 'image': image.asset->url,
 },
 }
 `;

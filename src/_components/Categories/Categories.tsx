@@ -4,9 +4,10 @@ import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
-import Pay from '@/_assets/img/Pay.jpeg';
 import Wave from '@/_assets/svg/wave_yellow.svg';
 import { Button } from '@/_components/Button';
+
+import CategoryCard from './CategoryCard';
 
 const Wrapper = styled.section`
   width: 100%;
@@ -36,7 +37,11 @@ export function Categories({ categories }: any) {
   return (
     <Wrapper>
       <Wave />
-      <Inner>{categories?.map((c: any) => c.title)}</Inner>
+      <Inner>
+        {categories?.map((category: any) => (
+          <CategoryCard key={category} category={category} />
+        ))}
+      </Inner>
       <Wave />
     </Wrapper>
   );
