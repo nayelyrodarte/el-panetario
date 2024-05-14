@@ -20,7 +20,7 @@ const Wrapper = styled.section`
 `;
 
 const StyledImage = styled(Image)`
-  border-radius: 1000px;
+  border-radius: var(--border-radius);
 
   object-fit: cover;
   object-position: 0% 30%;
