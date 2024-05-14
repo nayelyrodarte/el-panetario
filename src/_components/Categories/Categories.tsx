@@ -20,15 +20,29 @@ const Wrapper = styled.section`
 
 const Inner = styled.div`
   background-color: var(--secondary-color);
+  color: var(--primary-color-contrast);
 
   display: flex;
-  align-content: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   padding: calc(var(--spacing-lg) * 2) var(--spacing-lg);
+  gap: var(--spacing-lg);
+
+  text-align: center;
 
   @media only screen and (min-width: 48em) {
     padding: var(--spacing-lg);
+  }
+`;
+
+const CategoriesContainer = styled.section`
+  display: flex;
+  gap: var(--spacing-md);
+  flex-direction: column;
+
+  @media only screen and (min-width: 48em) {
+    flex-direction: row;
   }
 `;
 
@@ -38,9 +52,12 @@ export function Categories({ categories }: any) {
     <Wrapper>
       <Wave />
       <Inner>
-        {categories?.map((category: any) => (
-          <CategoryCard key={category} category={category} />
-        ))}
+        <h2>Explora por categoria</h2>
+        <CategoriesContainer>
+          {categories?.map((category: any) => (
+            <CategoryCard key={category} category={category} />
+          ))}
+        </CategoriesContainer>
       </Inner>
       <Wave />
     </Wrapper>

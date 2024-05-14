@@ -9,17 +9,23 @@ interface CategoryCard {
 }
 
 const Card = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-items: center;
   align-items: center;
   gap: 0.6rem;
 
   padding: var(--spacing-md);
-  width: 10.5rem;
+  min-width: 100%;
 
   background: var(--secondary-color-soft);
   color: var(--primary-color-contrast);
   border-radius: var(--border-radius);
+
+  @media only screen and (min-width: 48em) {
+    grid-template-columns: 1fr;
+    min-width: 12rem;
+  }
 `;
 
 const StyledLink = styled(Link)`
