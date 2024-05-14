@@ -1,23 +1,25 @@
-'use client';
-
 import React from 'react';
-import styled from 'styled-components';
 
-import { FeaturedRecipe } from '@/_components/FeaturedRecipe';
+import { Categories } from '@/_components/Categories';
 import { Header } from '@/_components/Header';
 import { Intro } from '@/_components/Intro/Intro';
 
-const Wrapper = styled.main`
-  min-height: 90dvh;
-  background-color: var(--background-color);
-`;
+import { getHomeData } from '../../../sanity/queries';
+import { client } from '../_api/client';
 
-export default function Home() {
+export default async function Home() {
+  const data = await client.fetch(getHomeData);
+  console.log(data);
+
+  if (!data) {
+    return null;
+  }
+
   return (
-    <Wrapper>
+    <>
       <Header />
+      <Categories categories={data?.categories} />
       <Intro />
-      <FeaturedRecipe />
-    </Wrapper>
+    </>
   );
 }
