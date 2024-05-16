@@ -12,7 +12,9 @@ const StyledRecipeContainer = styled.section`
   justify-content: center;
 
   max-width: var(--max-width);
+
   margin: auto;
+  padding: calc(var(--spacing-lg) * 2) 0;
 `;
 
 // TODO: types
