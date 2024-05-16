@@ -5,7 +5,11 @@ import styled from 'styled-components';
 
 const RecipeCardStyled = styled.article`
   display: flex;
-  gap: var(--spacing-md);
+  flex-direction: column;
+  gap: var(--spacing-sm);
+
+  width: 15rem;
+  padding: 1rem;
 
   img {
     border-radius: var(--border-radius);
@@ -29,7 +33,7 @@ export default function RecipeCard(props: any) {
     <RecipeCardStyled>
       {mainImage && (
         <Image
-          width={200}
+          width={220}
           height={200}
           src={imageUrl}
           alt={mainImage?.asset?.alt || title}
