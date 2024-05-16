@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 import Wave from '@/_assets/svg/wave.svg';
@@ -17,13 +18,10 @@ const StyledHeader = styled.header`
   height: 10rem;
 `;
 
-export function Header() {
+export function Header({ children }: { children: ReactNode }) {
   return (
     <>
-      <StyledHeader>
-        <h1>El Panetario</h1>
-        <h3>Un Universo de Pan</h3>
-      </StyledHeader>
+      <StyledHeader>{children}</StyledHeader>
       <Wave />
     </>
   );
