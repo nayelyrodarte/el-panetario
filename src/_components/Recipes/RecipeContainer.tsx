@@ -18,7 +18,7 @@ const StyledRecipeContainer = styled.section`
 `;
 
 const Wrapper = styled.main`
-  min-height: 80dvh;
+  min-height: 55dvh;
 `;
 
 // TODO: types
