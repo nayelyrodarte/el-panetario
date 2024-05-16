@@ -17,13 +17,19 @@ const StyledRecipeContainer = styled.section`
   padding: calc(var(--spacing-lg) * 2) 0;
 `;
 
+const Wrapper = styled.main`
+  min-height: 80dvh;
+`;
+
 // TODO: types
 export function RecipeContainer({ recipes }: any) {
   return (
-    <StyledRecipeContainer>
-      {recipes?.map((r: any) => (
-        <RecipeCard key={r._id} {...r} />
-      ))}
-    </StyledRecipeContainer>
+    <Wrapper>
+      <StyledRecipeContainer>
+        {recipes?.map((r: any) => (
+          <RecipeCard key={r._id} {...r} />
+        ))}
+      </StyledRecipeContainer>
+    </Wrapper>
   );
 }
