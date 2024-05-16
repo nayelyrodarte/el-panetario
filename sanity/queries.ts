@@ -6,6 +6,7 @@ export const getAllRecipes = `
  _id,
  description,
  mainImage,
+ 'imageUrl': mainImage.asset->url,
  slug
 }
 `;
