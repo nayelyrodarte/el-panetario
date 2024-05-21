@@ -1,4 +1,5 @@
-// Params should be passed via URL query params, for more info: https://www.sanity.io/docs/groq-parameters
+// Params should be passed via URL query params or by the client.fetch function,
+// for more info: https://www.sanity.io/docs/groq-parameters
 
 export const getAllRecipes = `
 *[_type == "recipe"]{
@@ -23,6 +24,17 @@ export const getRecipeByCategoryId = `
  title,
  'recipes': *[_type == "recipe" && references(^._id)]{ title, mainImage, slug }
 }
+`;
+
+//TODO: Add related recipes (in same category)
+export const getRecipeBySlug = `
+*[_type == "recipe" && slug.current == $slug]{
+   title,
+   description,
+   mainImage,
+   ingredients,
+   method,
+ }[0]
 `;
 
 export const getHomeData = `

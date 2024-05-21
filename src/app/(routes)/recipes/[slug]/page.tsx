@@ -1,9 +1,16 @@
-'use client';
+import { client } from '@/app/_api/client';
 
-import { useParams } from 'next/navigation';
+import { getRecipeBySlug } from '../../../../../sanity/queries';
+import { SingleRecipe } from './SingleRecipe';
 
-export default function Recipe() {
-  const params = useParams<{ slug: string }>();
-  console.log(params);
-  return <div></div>;
+export default async function Recipe({ params }: { params: { slug: string } }) {
+  if (!params) {
+    return null;
+  }
+
+  const recipe = await client.fetch(getRecipeBySlug, {
+    slug: params.slug,
+  });
+
+  return <SingleRecipe {...recipe} />;
 }
