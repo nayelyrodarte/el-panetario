@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styled from 'styled-components';
 
+import { Croissant } from '@/_assets/svg/Croissant';
 import CroissantBeige from '@/_assets/svg/croissant_beige.svg';
 
 const StyledNav = styled.nav`
@@ -30,6 +31,10 @@ const NavSection = styled.section`
   gap: 1rem;
 
   font-family: var(--primary-font);
+
+  svg {
+    width: 2.5rem;
+  }
 `;
 
 const NavList = styled.ul`
@@ -69,7 +74,7 @@ export function Navigation() {
       <NavInner $isHome={path === '/'}>
         {path !== '/' && (
           <NavSection>
-            <CroissantBeige width={40} height={40} alt="Icono de croissant" />
+            <Croissant />
             <h3>El Panetario</h3>
           </NavSection>
         )}

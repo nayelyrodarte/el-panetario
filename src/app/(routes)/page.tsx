@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Croissant } from '@/_assets/svg/Croissant';
 import { Categories } from '@/_components/Categories';
 import { Header } from '@/_components/Header';
 import { Intro } from '@/_components/Intro/Intro';
@@ -16,7 +17,11 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
+      <Header>
+        <Croissant />
+        <h1>El Panetario</h1>
+        <h2>Un Universo de Pan</h2>
+      </Header>
       <Categories categories={data?.categories} />
       <Intro />
     </>
