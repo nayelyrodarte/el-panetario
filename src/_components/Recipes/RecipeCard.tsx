@@ -35,16 +35,14 @@ const StyledLink = styled(Link)`
 `;
 //TODO; types
 export default function RecipeCard(props: any) {
-  const { title, mainImage, imageUrl, slug, description } = props;
-  console.log(props);
+  const { title, mainImage, imageUrl, slug } = props;
 
   if (!props) {
     return null;
   }
 
   return (
-    //TODO: Update href when recipe page is ready
-    <StyledLink href="">
+    <StyledLink href={`/recipes/${slug.current}`}>
       <RecipeCardStyled>
         {mainImage && (
           <Image
