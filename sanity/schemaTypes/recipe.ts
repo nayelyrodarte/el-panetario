@@ -1,6 +1,43 @@
 import { defineField, defineType } from 'sanity';
 
-export default defineType({
+export const ingredient = {
+  name: 'ingredient',
+  type: 'object',
+  title: 'Ingredient',
+  fields: [
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Name',
+    },
+    {
+      name: 'quantity',
+      type: 'string',
+      title: 'Quantity',
+    },
+  ],
+};
+
+export const subcategory = {
+  name: 'subcategory',
+  type: 'object',
+  title: 'Subcategory',
+  fields: [
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Subcategory Name',
+    },
+    {
+      name: 'ingredients',
+      type: 'array',
+      title: 'Ingredients',
+      of: [{ type: 'ingredient' }],
+    },
+  ],
+};
+
+export const recipe = defineType({
   name: 'recipe',
   title: 'Recipe',
   type: 'document',
@@ -67,7 +104,7 @@ export default defineType({
       name: 'ingredients',
       title: 'Ingredients',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [{ type: 'subcategory' }],
       validation: (rule) => rule.required(),
     }),
     defineField({
