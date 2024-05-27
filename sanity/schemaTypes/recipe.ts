@@ -3,17 +3,22 @@ import { defineField, defineType } from 'sanity';
 export const ingredient = {
   name: 'ingredient',
   type: 'object',
-  title: 'Ingredient',
+  title: 'Ingrediente',
   fields: [
     {
       name: 'name',
       type: 'string',
-      title: 'Name',
+      title: 'Nombre del ingrediente',
     },
     {
-      name: 'quantity',
+      name: 'grams',
       type: 'string',
-      title: 'Quantity',
+      title: 'Cantidad en gramos',
+    },
+    {
+      name: 'cups',
+      type: 'string',
+      title: 'Cantidad en tazas',
     },
   ],
 };
@@ -21,17 +26,18 @@ export const ingredient = {
 export const subcategory = {
   name: 'subcategory',
   type: 'object',
-  title: 'Subcategory',
+  title: 'Grupo de ingrediente',
+  description: 'Ejemplo: "Para la masa", "para el betun", etc',
   fields: [
     {
       name: 'name',
       type: 'string',
-      title: 'Subcategory Name',
+      title: 'Grupo',
     },
     {
       name: 'ingredients',
       type: 'array',
-      title: 'Ingredients',
+      title: 'Ingredientes',
       of: [{ type: 'ingredient' }],
     },
   ],
@@ -39,12 +45,12 @@ export const subcategory = {
 
 export const recipe = defineType({
   name: 'recipe',
-  title: 'Recipe',
+  title: 'Receta',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Title',
+      title: 'Titulo',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -53,7 +59,7 @@ export const recipe = defineType({
       title: 'Slug',
       type: 'slug',
       description:
-        'The part of a URL that identifies a particular page on a website in an easy-to-read form. It gets automatically generated from the title when you click on "Generate".',
+        'Parte de la URL que identifica a cada receta. Por ejemplo "panque-de-platano". Se genera sola cuando das click en "Generate".',
       validation: (rule) => rule.required(),
       options: {
         source: 'title',
@@ -62,14 +68,15 @@ export const recipe = defineType({
     }),
     defineField({
       name: 'description',
-      title: 'Description',
+      title: 'Descripcion',
       type: 'text',
-      description: 'Short introduction about the recipe.',
+      description:
+        'Descripcion corta de la receta. Va posicionado como introduccion',
       validation: (rule) => rule.required().min(10).max(200),
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Imagen',
       type: 'image',
       options: {
         hotspot: true,
@@ -78,49 +85,48 @@ export const recipe = defineType({
         {
           name: 'alt',
           type: 'string',
-          title: 'Alternative Text',
+          title: 'Texto alternativo',
           description:
-            'Describes the image - It helps visually impaired people understand what the image shows. Ex. "Piece of chocolate cake"',
+            'Describe la imagen. Ayuda a las personas con discapacidad visual a entenderla mejor. Ej. "Rebanada de pastel de chocolate"',
         },
       ],
     }),
     defineField({
       name: 'publishedAt',
-      title: 'Published at',
+      title: 'Fecha de publicacion',
       type: 'datetime',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'prepTime',
-      title: 'Preparation time',
+      title: 'Tiempo de preparacion',
       type: 'string',
     }),
     defineField({
       name: 'servings',
-      title: 'Servings',
+      title: 'Porciones',
       type: 'string',
     }),
     defineField({
       name: 'ingredients',
-      title: 'Ingredients',
+      title: 'Ingredientes',
       type: 'array',
       of: [{ type: 'subcategory' }],
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'method',
-      title: 'Method',
+      title: 'Metodo',
       type: 'blockContent',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'categories',
-      title: 'Categories',
+      title: 'Categorias',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }],
     }),
   ],
-
   preview: {
     select: {
       title: 'title',
