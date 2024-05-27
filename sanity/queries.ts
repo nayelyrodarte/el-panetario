@@ -53,6 +53,11 @@ export const getAllCategories = `
 export const getRecipeByCategoryId = `
 *[_type == "category" && $categoryId == _id]{
  title,
- 'recipes': *[_type == "recipe" && references(^._id)]{ title, mainImage, slug }
+ 'recipes': *[_type == "recipe" && references(^._id)]{ title,
+  _id,
+  description,
+  mainImage,
+  'imageUrl': mainImage.asset->url,
+  slug }
 }
 `;

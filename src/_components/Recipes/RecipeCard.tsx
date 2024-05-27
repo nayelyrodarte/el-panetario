@@ -42,7 +42,7 @@ export default function RecipeCard(props: any) {
   }
 
   return (
-    <StyledLink href={`/recipes/${slug.current}`}>
+    <StyledLink href={`/recipes/${slug?.current}`}>
       <RecipeCardStyled>
         {mainImage && (
           <Image

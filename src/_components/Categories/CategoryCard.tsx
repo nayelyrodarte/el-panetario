@@ -5,6 +5,7 @@ interface CategoryCard {
   category: {
     title: string;
     image: string;
+    _id: string;
   };
 }
 
@@ -34,10 +35,10 @@ const StyledLink = styled(Link)`
 `;
 
 export default function CategoryCard({ category }: CategoryCard) {
-  const { title, image } = category;
+  const { title, image, _id } = category;
   return (
     // TODO: Add routing when single recipe page is ready
-    <StyledLink href="/">
+    <StyledLink href={`recipes?category=${_id}`}>
       <Card>
         {image && (
           <Image color="red" src={image} alt={title} width={60} height={60} />
