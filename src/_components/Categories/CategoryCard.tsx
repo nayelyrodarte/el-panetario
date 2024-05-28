@@ -13,25 +13,34 @@ interface CategoryCard {
 
 const Card = styled.div`
   display: grid;
-  grid-template-columns: 3rem 1fr;
-  padding: var(--spacing-md);
+  grid-template-columns: 2.5rem 1fr;
+  padding: var(--spacing-md) var(--spacing-sm);
   justify-items: start;
-  gap: 0.25rem;
+  align-content: center;
+  align-items: center;
 
-  min-width: 20dvh;
-  height: 5rem;
+  height: 4rem;
+  min-width: fit-content;
 
   background: var(--secondary-color-soft);
   color: var(--primary-color-contrast);
   border-radius: var(--border-radius);
 
-  img,
-  svg {
-    width: 2rem;
-    height: 2rem;
+  h3 {
+    font-size: 1.12rem;
   }
 
-  @media only screen and (min-width: 48em) {
+  img,
+  svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media only screen and (min-width: 45em) {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -44,11 +53,19 @@ const Card = styled.div`
     min-width: 16rem;
     height: 10rem;
 
+    h3 {
+      font-size: 1.5rem;
+    }
+
     img,
     svg {
       width: 3rem;
       height: 3rem;
     }
+  }
+
+  @media only screen and (max-width: 20em) {
+    min-width: 70vw;
   }
 `;
 
