@@ -44,13 +44,12 @@ export default function RecipeCard(props: any) {
   return (
     <StyledLink href={`/recipes/${slug?.current}`}>
       <RecipeCardStyled>
-        {mainImage && (
+        {mainImage && imageUrl && (
           <Image
             width={220}
             height={200}
             src={imageUrl}
-            alt={mainImage?.asset?.alt || title}
-            objectFit="cover"
+            alt={mainImage?.asset?.alt ?? title}
           />
         )}
         <p>{title}</p>
