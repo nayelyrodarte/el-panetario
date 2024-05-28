@@ -9,7 +9,9 @@ import { getHomeData } from '../../../sanity/queries';
 import { client } from '../_api/client';
 
 export default async function Home() {
-  const data = await client.fetch(getHomeData);
+  const data = await client.fetch(getHomeData, {
+    revalidate: 500,
+  });
 
   if (!data) {
     return null;

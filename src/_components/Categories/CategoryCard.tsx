@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
+
+import { Rebanada } from '@/_assets/svg/Rebanada';
 interface CategoryCard {
   category: {
     title: string;
@@ -11,21 +13,42 @@ interface CategoryCard {
 
 const Card = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr;
-  justify-items: center;
-  align-items: center;
-  gap: 0.6rem;
-
+  grid-template-columns: 3rem 1fr;
   padding: var(--spacing-md);
-  min-width: 100%;
+  justify-items: start;
+  gap: 0.25rem;
+
+  min-width: 20dvh;
+  height: 5rem;
 
   background: var(--secondary-color-soft);
   color: var(--primary-color-contrast);
   border-radius: var(--border-radius);
 
+  img,
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
   @media only screen and (min-width: 48em) {
-    grid-template-columns: 1fr;
-    min-width: 12rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    flex: 0 1 calc(25% - 5px); /* Adjust the px for your desired gutter (spacing between items) */
+    margin: 5px; /* Spacing */
+    box-sizing: border-box;
+
+    min-width: 16rem;
+    height: 10rem;
+
+    img,
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 `;
 
@@ -37,11 +60,12 @@ const StyledLink = styled(Link)`
 export default function CategoryCard({ category }: CategoryCard) {
   const { title, image, _id } = category;
   return (
-    // TODO: Add routing when single recipe page is ready
     <StyledLink href={`recipes?category=${_id}`}>
       <Card>
-        {image && (
-          <Image color="red" src={image} alt={title} width={60} height={60} />
+        {image ? (
+          <Image color="red" src={image} alt={title} width={50} height={50} />
+        ) : (
+          <Rebanada />
         )}
         <h3>{title}</h3>
       </Card>

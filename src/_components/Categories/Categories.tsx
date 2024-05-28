@@ -38,8 +38,10 @@ const Inner = styled.div`
 
 const CategoriesContainer = styled.section`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: var(--spacing-md);
-  flex-direction: column;
 
   @media only screen and (min-width: 48em) {
     flex-direction: row;
