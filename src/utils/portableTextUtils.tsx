@@ -1,5 +1,7 @@
 import { PortableTextComponents } from '@portabletext/react';
 
+// https://github.com/portabletext/react-portabletext?tab=readme-ov-file#available-components
+
 export const components: PortableTextComponents = {
   marks: {
     b: ({ children }) => <b>{children}</b>,
