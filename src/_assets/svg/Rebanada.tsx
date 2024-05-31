@@ -11,7 +11,7 @@ export const Rebanada: React.FC = () => {
       y="0px"
       width="100%"
       viewBox="0 0 4500 4500"
-      enable-background="new 0 0 4500 4500"
+      enableBackground="new 0 0 4500 4500"
       xmlSpace="preserve"
     >
       <path
