@@ -25,4 +25,7 @@ export const components: PortableTextComponents = {
     // Custom lists
     checkmarks: ({ children }) => <ol>{children}</ol>,
   },
+  block: {
+    h4: ({ children }) => <h4 style={{ padding: '1rem' }}>{children}</h4>,
+  },
 };
