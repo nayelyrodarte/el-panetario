@@ -1,5 +1,3 @@
-import { describe } from 'node:test';
-
 import { defineField, defineType } from 'sanity';
 
 export const ingredient = {
