@@ -1,19 +1,31 @@
+'use client';
+
+import { PortableText } from '@portabletext/react';
+import { useState } from 'react';
+
 import { Header } from '@/_components/Header';
-import { client } from '@/app/_api/client';
+import { components } from '@/utils/portableTextUtils';
 
-import { getRecipeBySlug } from '../../../../../sanity/queries';
-
-export async function SingleRecipe(props: any) {
+export function SingleRecipe(props: any) {
   const { title, description, ingredients, method } = props;
+  const [measurement, setMeasurement] = useState('grams');
+  const [portion, setPortion] = useState(1);
+
   return (
     <main>
       <Header>
         <h2>{title}</h2>
         <p>{description}</p>
       </Header>
-      {ingredients?.map((i: string) => (
-        <p key={i}>{i}</p>
-      ))}
+      <section>
+        {ingredients &&
+          ingredients?.map((i: any) =>
+            i.ingredients?.map((e: any) => (
+              <div key={`${e.name}-${title}`}>{`${e.grams} de ${e.name}`}</div>
+            ))
+          )}
+      </section>
+      <PortableText value={method} components={components} />
     </main>
   );
 }

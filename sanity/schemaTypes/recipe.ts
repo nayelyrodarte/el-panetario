@@ -1,3 +1,5 @@
+import { describe } from 'node:test';
+
 import { defineField, defineType } from 'sanity';
 
 export const ingredient = {
@@ -12,13 +14,15 @@ export const ingredient = {
     },
     {
       name: 'grams',
-      type: 'string',
+      type: 'number',
       title: 'Cantidad en gramos',
+      description: 'Solo se aceptan numeros.',
     },
     {
       name: 'cups',
-      type: 'string',
+      type: 'number',
       title: 'Cantidad en tazas',
+      description: 'Solo se aceptan numeros.',
     },
   ],
 };
