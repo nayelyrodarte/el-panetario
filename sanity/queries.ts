@@ -11,7 +11,7 @@ export const getHomeData = `
 'categories': *[_type == "category" && title != 'Featured']{
  title,
  _id,
- 'image': image.asset->url,
+ 'imageUrl': image.asset->url,
 },
 }
 `;
@@ -47,6 +47,7 @@ export const getAllCategories = `
 *[_type == "category"]{
  title,
  _id,
+ 'imageUrl': mainImage.asset->url,
 }
 `;
 

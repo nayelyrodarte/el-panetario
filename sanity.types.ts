@@ -108,8 +108,8 @@ export type Category = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  image?: {
+  title: string;
+  image: {
     asset?: {
       _ref: string;
       _type: "reference";
@@ -120,6 +120,7 @@ export type Category = {
     crop?: SanityImageCrop;
     _type: "image";
   };
+  imageUrl?: string;
 };
 
 export type Recipe = {

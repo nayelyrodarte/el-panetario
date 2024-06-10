@@ -4,6 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import { Recipe } from '../../../sanity.types';
+
 const RecipeCardStyled = styled.article`
   display: flex;
   flex-direction: column;
@@ -33,8 +35,8 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
 `;
-//TODO; types
-export default function RecipeCard(props: any) {
+
+export default function RecipeCard(props: Recipe) {
   const { title, mainImage, imageUrl, slug } = props;
 
   if (!props) {
@@ -49,7 +51,7 @@ export default function RecipeCard(props: any) {
             width={220}
             height={200}
             src={imageUrl}
-            alt={mainImage?.asset?.alt ?? title}
+            alt={mainImage.alt || title}
           />
         )}
         <p>{title}</p>

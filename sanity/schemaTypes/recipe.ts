@@ -88,10 +88,16 @@ export const recipe = defineType({
           name: 'alt',
           type: 'string',
           title: 'Texto alternativo',
+          validation: (rule) => rule.required(),
           description:
             'Describe la imagen. Ayuda a las personas con discapacidad visual a entenderla mejor. Ej. "Rebanada de pastel de chocolate"',
         },
       ],
+    }),
+    defineField({
+      name: 'imageUrl',
+      type: 'string',
+      hidden: true,
     }),
     defineField({
       name: 'publishedAt',

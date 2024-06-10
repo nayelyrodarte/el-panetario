@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 
+import { Recipe } from '../../../sanity.types';
 import RecipeCard from './RecipeCard';
 
 const StyledRecipeContainer = styled.section`
@@ -21,12 +22,11 @@ const Wrapper = styled.main`
   min-height: 55dvh;
 `;
 
-// TODO: types
-export function RecipeContainer({ recipes }: any) {
+export function RecipeContainer({ recipes }: { recipes: Recipe[] }) {
   return (
     <Wrapper>
       <StyledRecipeContainer>
-        {recipes?.map((r: any) => (
+        {recipes?.map((r) => (
           <RecipeCard key={r._id} {...r} />
         ))}
       </StyledRecipeContainer>

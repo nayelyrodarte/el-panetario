@@ -3,13 +3,8 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 import { Rebanada } from '@/_assets/svg/Rebanada';
-interface CategoryCard {
-  category: {
-    title: string;
-    image: string;
-    _id: string;
-  };
-}
+
+import { Category } from '../../../sanity.types';
 
 const Card = styled.div`
   display: grid;
@@ -74,13 +69,14 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-export default function CategoryCard({ category }: CategoryCard) {
-  const { title, image, _id } = category;
+export default function CategoryCard({ category }: { category: Category }) {
+  const { title, _id, imageUrl } = category;
+
   return (
     <StyledLink href={`recipes?category=${_id}`}>
       <Card>
-        {image ? (
-          <Image color="red" src={image} alt={title} width={50} height={50} />
+        {imageUrl ? (
+          <Image src={imageUrl} alt={title ?? ''} width={50} height={50} />
         ) : (
           <Rebanada />
         )}

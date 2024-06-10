@@ -1,12 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
 
 import Wave from '@/_assets/svg/wave_yellow.svg';
-import { Button } from '@/_components/Button';
 
+import { Category } from '../../../sanity.types';
 import CategoryCard from './CategoryCard';
 
 const Wrapper = styled.section`
@@ -48,16 +47,15 @@ const CategoriesContainer = styled.section`
   }
 `;
 
-// TODO: types
-export function Categories({ categories }: any) {
+export function Categories({ categories }: { categories: Category[] }) {
   return (
     <Wrapper>
       <Wave />
       <Inner>
         <h2>Explora por categoria</h2>
         <CategoriesContainer>
-          {categories?.map((category: any) => (
-            <CategoryCard key={category} category={category} />
+          {categories?.map((category) => (
+            <CategoryCard key={category._id} category={category} />
           ))}
         </CategoriesContainer>
       </Inner>
