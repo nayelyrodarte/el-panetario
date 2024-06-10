@@ -143,6 +143,7 @@ export type Recipe = {
     alt?: string;
     _type: "image";
   };
+  imageUrl?: string;
   publishedAt?: string;
   prepTime?: string;
   servings?: string;
