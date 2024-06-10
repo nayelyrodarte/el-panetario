@@ -798,6 +798,13 @@
         },
         "optional": true
       },
+      "imageUrl": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "string"
+        },
+        "optional": true
+      },
       "publishedAt": {
         "type": "objectAttribute",
         "value": {
