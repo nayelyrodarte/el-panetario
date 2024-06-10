@@ -128,9 +128,9 @@ export type Recipe = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  title?: string;
-  slug?: Slug;
-  description?: string;
+  title: string;
+  slug: Slug;
+  description: string;
   mainImage?: {
     asset?: {
       _ref: string;
@@ -140,17 +140,17 @@ export type Recipe = {
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    alt?: string;
+    alt: string;
     _type: "image";
   };
   imageUrl?: string;
-  publishedAt?: string;
+  publishedAt: string;
   prepTime?: string;
   servings?: string;
-  ingredients?: Array<{
+  ingredients: Array<{
     _key: string;
   } & Subcategory>;
-  method?: BlockContent;
+  method: BlockContent;
   categories?: Array<{
     _ref: string;
     _type: "reference";
@@ -219,7 +219,7 @@ export type SanityImageMetadata = {
 
 export type Slug = {
   _type: "slug";
-  current?: string;
+  current: string;
   source?: string;
 };
 export declare const internalGroqTypeReferenceTo: unique symbol;
