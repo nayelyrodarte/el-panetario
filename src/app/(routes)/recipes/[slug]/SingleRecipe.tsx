@@ -6,10 +6,17 @@ import { useState } from 'react';
 import { Header } from '@/_components/Header';
 import { components } from '@/utils/portableTextUtils';
 
-export function SingleRecipe(props: any) {
-  const { title, description, ingredients, method } = props;
-  const [measurement, setMeasurement] = useState('grams');
+import { Recipe } from '../../../../../sanity.types';
+
+export function SingleRecipe(props: Recipe) {
+  const { title, description, ingredients = [], method } = props;
+  const [measurement, setMeasurement] = useState<'grams' | 'cups'>('grams');
   const [portion, setPortion] = useState(1);
+
+  const translate = {
+    grams: 'gramos',
+    cups: 'taza',
+  };
 
   return (
     <main>
@@ -19,9 +26,11 @@ export function SingleRecipe(props: any) {
       </Header>
       <section>
         {ingredients &&
-          ingredients?.map((i: any) =>
-            i.ingredients?.map((e: any) => (
-              <div key={`${e.name}-${title}`}>{`${e.grams} de ${e.name}`}</div>
+          ingredients?.map((i) =>
+            i.ingredients?.map((e) => (
+              <div
+                key={`${e.name}-${title}`}
+              >{`${e[measurement]} ${translate[measurement]} de ${e.name}`}</div>
             ))
           )}
       </section>
