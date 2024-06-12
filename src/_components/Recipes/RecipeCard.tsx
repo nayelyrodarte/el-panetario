@@ -5,6 +5,8 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 import { Recipe } from '../../../sanity.types';
+// TODO: Replace for real placeholder image
+import Pay from '../../_assets/img/Pay.jpeg';
 
 const RecipeCardStyled = styled.article`
   display: flex;
@@ -46,14 +48,12 @@ export default function RecipeCard(props: Recipe) {
   return (
     <StyledLink href={`/recipes/${slug?.current}`}>
       <RecipeCardStyled>
-        {mainImage && imageUrl && (
-          <Image
-            width={220}
-            height={200}
-            src={imageUrl}
-            alt={mainImage.alt || title}
-          />
-        )}
+        <Image
+          width={220}
+          height={200}
+          src={imageUrl ? imageUrl : Pay}
+          alt={mainImage?.alt ?? title}
+        />
         <p>{title}</p>
       </RecipeCardStyled>
     </StyledLink>
