@@ -1,0 +1,145 @@
+@font-face {
+  font-family: 'Laviossa';
+  src: url('../../_assets/fonts/Laviossa-Medium.otf');
+}
+
+@font-face {
+  font-family: 'General Sans';
+  src: url('../../_assets/fonts/GeneralSans-Medium.otf');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--secondary-font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+
+  color: var(--main-text-color);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--primary-font);
+  font-weight: normal;
+}
+
+h1 {
+  font-size: var(--font-heading-1-mb);
+
+  @media only screen and (min-width: 40em) {
+    font-size: var(--font-heading-1);
+  }
+}
+
+h2 {
+  font-size: var(--font-heading-2-mb);
+
+  @media only screen and (min-width: 40em) {
+    font-size: var(--font-heading-2);
+  }
+}
+
+h3 {
+  font-size: var(--font-heading-3-mb);
+
+  @media only screen and (min-width: 40em) {
+    font-size: var(--font-heading-3);
+  }
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --primary-color: rgba(0, 99, 216, 1);
+  --primary-color-contrast: rgba(0, 89, 195, 1);
+  --primary-color-soft: rbga(230, 241, 255, 1);
+
+  --secondary-color: rgba(255, 205, 0, 1);
+  --secondary-color-soft: rgba(249, 222, 113, 1);
+
+  --neutral-color: rgba(250, 233, 216, 1);
+  --accent-color: rgba(255, 128, 0, 1);
+
+  --background-color: rgba(251, 251, 251, 1);
+
+  --primary-font: 'Laviossa';
+  --secondary-font: 'General Sans';
+  --main-text-color: hsla(48, 71%, 15%, 1);
+  --white-text-color: rgba(251, 251, 251, 1);
+
+  --font-heading-1: 48px;
+  --font-heading-2: 34px;
+  --font-heading-3: 24px;
+
+  /* Mobile headings */
+  --font-heading-1-mb: 30px;
+  --font-heading-2-mb: 24px;
+  --font-heading-3-mb: 20px;
+
+  --font-body: 16px;
+  --font-caption: 12px;
+
+  --spacing-unit: 8px;
+  --spacing-xs: var(--spacing-unit);
+  --spacing-sm: calc(2 * var(--spacing-unit));
+  --spacing-md: calc(3 * var(--spacing-unit));
+  --spacing-lg: calc(4 * var(--spacing-unit));
+
+  --padding: var(--spacing-md);
+  --margin: var(--spacing-sm);
+  --max-width: 1500px;
+
+  --border-radius: 8px;
+}
+
+/* 
+Media queries 
+
+Small devices such as large phones (640px and up) 
+ @media only screen and (min-width: 40em) {...}
+
+/* Medium devices such as tablets (768px and up) 
+ @media only screen and (min-width: 48em) {...}
+
+/* Large devices such as laptops (1024px and up) 
+ @media only screen and (min-width: 64em) {...}
+
+/* Largest devices such as desktops (1280px and up)
+ @media only screen and (min-width: 80em) {...} 
+*/
