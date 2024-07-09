@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Run `yarn` or `yarn add` to install all packages.
+1. Run `yarn` or `yarn i` to install all packages.
 2. Update the necessary env variables, as follows:
 
 `NEXT_PUBLIC_SANITY_PROJECT_ID=ID_GOES_HERE
