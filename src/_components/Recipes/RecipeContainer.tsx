@@ -6,20 +6,21 @@ import { Recipe } from '../../../sanity.types';
 import RecipeCard from './RecipeCard';
 
 const StyledRecipeContainer = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 20%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
   align-items: center;
   justify-items: center;
   justify-content: center;
 
-  max-width: var(--max-width);
+  max-width: calc(var(--max-width) - 25rem);
 
   margin: auto;
   padding: calc(var(--spacing-lg) * 2) 0;
 `;
 
 const Wrapper = styled.main`
-  min-height: 55dvh;
+  min-height: 50dvh;
 `;
 
 export function RecipeContainer({ recipes }: { recipes: Recipe[] }) {
