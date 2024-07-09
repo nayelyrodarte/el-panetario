@@ -16,6 +16,7 @@ const RecipeCardStyled = styled.article`
   border-radius: var(--border-radius);
 
   width: 15rem;
+  min-height: 18rem;
   padding: 1rem;
 
   img {
