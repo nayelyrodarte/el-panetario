@@ -10,3 +10,7 @@ NEXT_PUBLIC_SANITY_DATASET="production"
 NEXT_PUBLIC_SANITY_API_VERSION="2024-04-03"`
 
 3. Run `yarn dev` to start the local environment.
+
+## Sanity Studio
+
+To run Sanity Studio, we just need to navigate to `/studio`.
