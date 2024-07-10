@@ -21,6 +21,7 @@ const RecipeCardStyled = styled.article`
 
   img {
     border-radius: var(--border-radius);
+    object-fit: cover;
   }
 
   p {
