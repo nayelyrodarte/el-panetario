@@ -14,8 +14,6 @@ const StyledHeader = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  height: 10rem;
 `;
 
 export function Header({ children }: { children: ReactNode }) {

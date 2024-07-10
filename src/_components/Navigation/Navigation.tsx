@@ -74,7 +74,7 @@ export function Navigation() {
       <NavInner $isHome={path === '/'}>
         {path !== '/' && (
           <NavSection>
-            <Croissant />
+            <Croissant height="2rem" />
             <h3>El Panetario</h3>
           </NavSection>
         )}
