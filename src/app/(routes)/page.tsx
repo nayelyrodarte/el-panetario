@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <>
       <Header>
-        <Croissant />
+        <Croissant height="5rem" />
         <h1>El Panetario</h1>
         <h2>Un Universo de Pan</h2>
       </Header>
