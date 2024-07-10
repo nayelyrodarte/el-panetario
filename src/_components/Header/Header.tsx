@@ -14,12 +14,22 @@ const StyledHeader = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (min-width: 45em) {
+    max-height: 40vh;
+  }
 `;
 
-export function Header({ children }: { children: ReactNode }) {
+export function Header({
+  children,
+  style,
+}: {
+  children: ReactNode;
+  style?: any;
+}) {
   return (
     <>
-      <StyledHeader>{children}</StyledHeader>
+      <StyledHeader style={style}>{children}</StyledHeader>
       <Wave />
     </>
   );
