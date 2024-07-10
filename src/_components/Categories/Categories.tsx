@@ -42,6 +42,8 @@ const CategoriesContainer = styled.section`
   align-items: center;
   gap: var(--spacing-md);
 
+  max-width: calc(var(--max-width) - 40rem);
+
   @media only screen and (min-width: 48em) {
     flex-direction: row;
   }

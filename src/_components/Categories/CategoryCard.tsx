@@ -45,12 +45,8 @@ const Card = styled.div`
     margin: 5px; /* Spacing */
     box-sizing: border-box;
 
-    min-width: 16rem;
-    height: 10rem;
-
-    h3 {
-      font-size: 1.5rem;
-    }
+    min-width: 12rem;
+    height: 8rem;
 
     img,
     svg {
