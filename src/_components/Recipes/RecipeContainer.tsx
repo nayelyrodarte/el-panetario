@@ -8,7 +8,7 @@ import RecipeCard from './RecipeCard';
 const StyledRecipeContainer = styled.section`
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
   align-items: center;
   justify-items: center;
   justify-content: center;
@@ -16,7 +16,10 @@ const StyledRecipeContainer = styled.section`
   max-width: calc(var(--max-width) - 25rem);
 
   margin: auto;
-  padding: calc(var(--spacing-lg) * 2) 0;
+
+  @media only screen and (min-width: 45em) {
+    padding: calc(var(--spacing-lg) * 2) 0;
+  }
 `;
 
 const Wrapper = styled.main`
