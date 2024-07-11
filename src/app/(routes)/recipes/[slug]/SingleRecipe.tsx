@@ -64,6 +64,7 @@ export function SingleRecipe(props: Recipe) {
     cups: 'taza',
   };
 
+  // TODO: Breadcrumbs: Recetas > Categoria
   return (
     <main>
       <Header>

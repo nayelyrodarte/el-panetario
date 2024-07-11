@@ -30,6 +30,7 @@ export const getAllRecipes = `
 `;
 
 //TODO: Add related recipes (in same category)
+// Add categories
 export const getRecipeBySlug = `
 *[_type == "recipe" && slug.current == $slug]{
    title,
