@@ -27,6 +27,11 @@ export default function RootLayout({
           <Footer />
         </StyledComponentsRegistry>
       </body>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7189778934872846"
+        crossOrigin="anonymous"
+      ></script>
     </html>
   );
 }
