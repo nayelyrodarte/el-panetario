@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import ProfilePhoto from '../../_assets/img/NR2024-4_50.jpg';
 
 const Wrapper = styled.section`
-  padding: var(--spacing-md) var(--spacing-lg);
+  padding: calc(var(--spacing-lg) * 2) var(--spacing-md);
 `;
 
 const StyledIntro = styled.section`
