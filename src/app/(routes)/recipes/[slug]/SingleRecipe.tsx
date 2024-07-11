@@ -16,7 +16,7 @@ const StyledHeader = styled.section`
   align-items: center;
   max-width: calc(var(--max-width) - 40rem);
 
-  gap: var(--spacing-sm);
+  gap: var(--spacing-lg);
   padding: var(--spacing-md) 0;
 
   img {
@@ -33,7 +33,7 @@ const StyledHeader = styled.section`
     align-items: center;
     justify-items: center;
 
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-lg);
 
     box-sizing: border-box;
 
@@ -46,7 +46,7 @@ const StyledHeader = styled.section`
 
   p,
   h1 {
-    max-width: 70ch;
+    max-width: 60ch;
   }
 
   @media only screen and (min-width: 45em) {
@@ -61,7 +61,7 @@ const StyledContent = styled.section`
   margin: var(--spacing-lg) auto;
 
   padding: var(--spacing-lg) var(--spacing-md);
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 
   @media only screen and (min-width: 45em) {
     grid-template-columns: 30% 1fr;
@@ -70,6 +70,42 @@ const StyledContent = styled.section`
 
 const StyledMethod = styled.section`
   max-width: 80ch;
+`;
+
+const StyledIngredients = styled.section`
+  border: dashed 3px var(--accent-color);
+  background: var(--accent-color-dimmed);
+  border-radius: 8px;
+
+  height: fit-content;
+  min-height: 8rem;
+
+  position: relative;
+
+  .ingredients__title {
+    background: var(--accent-color);
+    color: var(--white-text-color);
+
+    position: absolute;
+    top: -1rem;
+    left: var(--spacing-md);
+    right: 0;
+
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 8px;
+
+    width: fit-content;
+
+    @media only screen and (min-width: 45em) {
+      margin: auto;
+      left: 0;
+    }
+  }
+
+  @media only screen and (min-width: 45em) {
+    position: sticky;
+    min-height: 50%;
+  }
 `;
 
 export function SingleRecipe(props: Recipe) {
@@ -97,16 +133,21 @@ export function SingleRecipe(props: Recipe) {
         </StyledHeader>
       </Header>
       <StyledContent>
-        <section>
-          {ingredients &&
-            ingredients?.map((i) =>
-              i.ingredients?.map((e) => (
-                <div
-                  key={`${e.name}-${title}`}
-                >{`${e[measurement]} ${translate[measurement]} de ${e.name}`}</div>
-              ))
-            )}
-        </section>
+        <StyledIngredients>
+          <div className="ingredients__title">
+            <h3>Ingredientes</h3>
+          </div>
+          <div>
+            {ingredients &&
+              ingredients?.map((i) =>
+                i.ingredients?.map((e) => (
+                  <div
+                    key={`${e.name}-${title}`}
+                  >{`${e[measurement]} ${translate[measurement]} de ${e.name}`}</div>
+                ))
+              )}
+          </div>
+        </StyledIngredients>
         <StyledMethod>
           <PortableText value={method} components={components} />
         </StyledMethod>

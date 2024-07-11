@@ -95,6 +95,7 @@ h3 {
 
   --neutral-color: rgba(250, 233, 216, 1);
   --accent-color: rgba(255, 128, 0, 1);
+  --accent-color-dimmed: rgba(255, 202, 149, 0.18);
 
   --background-color: rgba(251, 251, 251, 1);
 
