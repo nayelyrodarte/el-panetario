@@ -40,7 +40,7 @@ const StyledHeader = styled.section`
     @media only screen and (min-width: 45em) {
       grid-template-columns: repeat(2, 50%);
       justify-items: start;
-      gap: var(--spacing-sm);
+      gap: var(--spacing-md);
     }
   }
 
@@ -52,6 +52,24 @@ const StyledHeader = styled.section`
   @media only screen and (min-width: 45em) {
     height: 20rem;
   }
+`;
+
+const StyledContent = styled.section`
+  display: grid;
+  grid-template-columns: 100%;
+  max-width: calc(var(--max-width) - 30rem);
+  margin: var(--spacing-lg) auto;
+
+  padding: var(--spacing-lg) var(--spacing-md);
+  gap: var(--spacing-xl);
+
+  @media only screen and (min-width: 45em) {
+    grid-template-columns: 30% 1fr;
+  }
+`;
+
+const StyledMethod = styled.section`
+  max-width: 80ch;
 `;
 
 export function SingleRecipe(props: Recipe) {
@@ -78,17 +96,21 @@ export function SingleRecipe(props: Recipe) {
           </section>
         </StyledHeader>
       </Header>
-      <section>
-        {ingredients &&
-          ingredients?.map((i) =>
-            i.ingredients?.map((e) => (
-              <div
-                key={`${e.name}-${title}`}
-              >{`${e[measurement]} ${translate[measurement]} de ${e.name}`}</div>
-            ))
-          )}
-      </section>
-      <PortableText value={method} components={components} />
+      <StyledContent>
+        <section>
+          {ingredients &&
+            ingredients?.map((i) =>
+              i.ingredients?.map((e) => (
+                <div
+                  key={`${e.name}-${title}`}
+                >{`${e[measurement]} ${translate[measurement]} de ${e.name}`}</div>
+              ))
+            )}
+        </section>
+        <StyledMethod>
+          <PortableText value={method} components={components} />
+        </StyledMethod>
+      </StyledContent>
     </main>
   );
 }
