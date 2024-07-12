@@ -109,6 +109,7 @@ const StyledIngredients = styled.section`
 
   @media only screen and (min-width: 45em) {
     position: sticky;
+    top: 1rem;
     min-height: 50%;
   }
 `;
