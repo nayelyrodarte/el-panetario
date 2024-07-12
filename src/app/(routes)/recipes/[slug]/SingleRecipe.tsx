@@ -82,6 +82,11 @@ const StyledIngredients = styled.section`
 
   position: relative;
 
+  .ingredients__content {
+    padding: var(--spacing-md);
+    padding-top: var(--spacing-2xl);
+  }
+
   .ingredients__title {
     background: var(--accent-color);
     color: var(--white-text-color);
@@ -137,7 +142,7 @@ export function SingleRecipe(props: Recipe) {
           <div className="ingredients__title">
             <h3>Ingredientes</h3>
           </div>
-          <div>
+          <div className="ingredients__content">
             {ingredients &&
               ingredients?.map((i) =>
                 i.ingredients?.map((e) => (

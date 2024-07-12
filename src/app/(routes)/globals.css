@@ -121,6 +121,8 @@ h3 {
   --spacing-sm: calc(2 * var(--spacing-unit));
   --spacing-md: calc(3 * var(--spacing-unit));
   --spacing-lg: calc(4 * var(--spacing-unit));
+  --spacing-xl: calc(5 * var(--spacing-unit));
+  --spacing-2xl: calc(6 * var(--spacing-unit));
 
   --padding: var(--spacing-md);
   --margin: var(--spacing-sm);
