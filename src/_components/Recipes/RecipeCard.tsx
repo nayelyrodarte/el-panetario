@@ -11,13 +11,14 @@ import Pay from '../../_assets/img/Pay.jpeg';
 const RecipeCardStyled = styled.article`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--spacing-sm);
 
   border-radius: var(--border-radius);
 
+  padding: 0.5rem;
   width: 15rem;
-  min-height: 18rem;
-  padding: 1rem;
+  min-height: 15rem;
 
   img {
     border-radius: var(--border-radius);
@@ -32,6 +33,10 @@ const RecipeCardStyled = styled.article`
   &:focus-within {
     background: var(--secondary-color-soft);
     box-shadow: 0 0 0.25rem var(--secondary-color);
+  }
+
+  @media only screen and (min-width: 45em) {
+    min-height: 18rem;
   }
 `;
 
